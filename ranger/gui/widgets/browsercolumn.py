@@ -95,7 +95,8 @@ class BrowserColumn(Pager):  # pylint: disable=too-many-instance-attributes
                         elif self.level == 0:
                             self.fm.thisdir.move_to_obj(clicked_file)
                             self.fm.execute_file(clicked_file)
-
+        elif self.target.is_file:
+            self.scrollbit(direction)
         else:
             if self.level > 0 and not direction:
                 self.fm.move(right=0)
